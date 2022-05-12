@@ -258,11 +258,11 @@ Left the best for last. If you are a Visual Studio Code user, you are in a good 
 
 The first step is to install the **ElixirLS** extension.
 
-![](/images/elixirls.png)
+![](/images/posts/elixirls.png)
 
 Then you need to add a configuration file to set up debug. Finally, click on _"Run and Debug"_.
 
-![](/images/vscode-debug1.png)
+![](/images/posts/vscode-debug1.png)
 
 After that, click on _"create a launch.json file"_. This will create a default configuration for Elixir.
 
@@ -326,15 +326,15 @@ You can either debug when running a test or execute the code you want to debug i
 
 Add a breakpoint(s) to the code you want to check.
 
-![](/images/vscode-debug2.png)
+![](/images/posts/vscode-debug2.png)
 
 And then click to start the debug session.
 
-![](/images/vscode-debug3.png)
+![](/images/posts/vscode-debug3.png)
 
 It will stop in the breakpoint to inspect values, add watches and step into and over the following lines.
 
-![](/images/vscode-debug4.png)
+![](/images/posts/vscode-debug4.png)
 
 With these tools, you are ready to solve any crime you commit in your code.
 
