@@ -1,0 +1,17 @@
+{{ define "main" }}
+{{ .Content }}
+{{ $paginator := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections) }}
+
+{{ range $paginator.Pages.ByPublishDate.Reverse }}
+  <h2 class="post-list {{ if ne .Params.show_summary false }}summary{{ end }}">
+    <a href="{{ .RelPermalink }}">
+      {{ .Title }}
+    </a>
+  </h2>
+  <div><strong>{{ .Date.Format "Mon, Jan 2, 2006" }}</strong></div>
+  {{ if ne .Params.show_summary false }}
+    {{ .Summary }}
+  {{ end }}
+{{ end }}
+{{ template "partials/pagination.html" . }}
+{{ end }}
