@@ -2270,14 +2270,14 @@ nav {
 nav .bar1,
 nav .bar2,
 nav .bar3 {
-  background-color: #41403e;
-  border-bottom: 5px solid #41403e;
+  background-color: #2bbc8a;
+  border-bottom: 5px solid #2bbc8a;
   border-bottom-left-radius: 15px 5px;
   border-bottom-right-radius: 15px 3px;
-  color: #41403e;
-  margin: 6px 0;
+  color: #2bbc8a;
+  margin: 3px 0;
   transition: .4s;
-  width: 2rem
+  width: 1.5rem
 }
 nav .collapsible input[id^=collapsible]:checked + button .bar1 {
   -webkit-transform: rotate(-45deg) translate(-9px,7px);
@@ -2373,7 +2373,8 @@ nav .collapsible > button {
   padding: .25rem;
   position: absolute;
   right: 0;
-  top: .2rem
+  top: .2rem;
+  border-color: #2bbc8a;
 }
 @media only screen and (max-width:768px) {
   nav .collapsible > button {
