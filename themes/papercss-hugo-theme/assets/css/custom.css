@@ -123,7 +123,7 @@ nav a, nav a:visited {
 }
 
 nav a:hover {
-  color: #41403e;
+  color: #73EEA9;
 }
 
 .border.split-nav {
@@ -164,4 +164,15 @@ nav .collapsible {
   80% { transform: translate(-1px, -1px) rotate(1deg); }
   90% { transform: translate(1px, 2px) rotate(0deg); }
   100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+
+@media only screen and (max-width:405px) {
+  nav h3 {
+    font-size: 1.3rem;
+  }
+}
+
+a:hover {
+  color: #73EEA9;
 }
