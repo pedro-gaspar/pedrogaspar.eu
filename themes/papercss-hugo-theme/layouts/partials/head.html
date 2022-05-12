@@ -37,6 +37,8 @@
   {{ $customCssPath := "css/custom.css" }}
   {{ $customCss:= resources.Get $customCssPath | resources.ExecuteAsTemplate $customCssPath . }}
   <link rel="stylesheet" type="text/css" href="{{ $customCss.RelPermalink }}">
+  <link href="/fonts/lineicons/lineicons.css" rel="stylesheet">
+  <!-- <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet"> -->
 
   {{ if hugo.IsProduction }}
     {{ template "_internal/google_analytics.html" . }}

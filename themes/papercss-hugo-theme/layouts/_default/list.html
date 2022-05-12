@@ -16,7 +16,7 @@
           {{ .Title }}
         </h2>
       </a>
-      <div><strong><a href="{{ .RelPermalink }}"></a>{{ .Date.Format "Mon, Jan 2, 2006" }}</a></strong></div>
+      <div class="post-details"><strong><a href="{{ .RelPermalink }}"><i class="lni lni-calendar"></i> {{ .Date.Format "Mon, Jan 2, 2006" }}</a></strong> <strong class="reading-time"><a href="{{ .RelPermalink }}"><i class="lni lni-alarm-clock"></i> {{ math.Round (div (countwords .Content) 220.0) }} min read</a></strong></div>
 
       {{ if ne .Params.show_summary false }}
         <div class="text">

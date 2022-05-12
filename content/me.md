@@ -40,8 +40,8 @@ I'm the father of two small 👧👧 that I'm trying to help grow and become ama
 
 ## You can find me in...
 
-**Github:** [pedro-gaspar](https://github.com/pedro-gaspar)
+<i class="lni lni-twitter-original"></i> [@\_pedro_gaspar](https://twitter.com/_pedro_gaspar)
 
-**Twitter:** [@\_pedro_gaspar](https://twitter.com/_pedro_gaspar)
+<i class="lni lni-github-original"></i> [pedro-gaspar](https://github.com/pedro-gaspar)
 
-**LinkedIn:** [pedromiggaspar](https://www.linkedin.com/in/pedromiggaspar/)
+<i class="lni lni-linkedin-original"></i> [pedromiggaspar](https://www.linkedin.com/in/pedromiggaspar/)

@@ -91,8 +91,9 @@ main img {
 }
 
 
-.posts-list .summary strong {
+.posts-list .summary strong a {
   text-decoration: none;
+  color: #41403e;
 }
 
 .posts-list .summary .text {
@@ -101,5 +102,26 @@ main img {
 
 .posts-list .summary .text a {
   text-decoration: none;
+  color: #41403e;
+}
+
+.reading-time {
+  margin-left: 1rem;
+}
+
+
+.post-details {
+  display: flexbox;
+}
+
+h1.post {
+  margin-bottom: 0
+}
+
+nav a, nav a:visited {
+  color: #2bbc8a;
+}
+
+nav a:hover {
   color: #41403e;
 }

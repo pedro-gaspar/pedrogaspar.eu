@@ -1,6 +1,8 @@
 {{ define "main" }}
 
-<h1>{{ .Title }}</h1>
+<h1 class="post">{{ .Title }}</h1>
+<div class="post-details"><strong><i class="lni lni-calendar"></i> {{ .Date.Format "Mon, Jan 2, 2006" }}</strong> <strong class="reading-time"><i class="lni lni-alarm-clock"></i> {{ math.Round (div (countwords .Content) 220.0) }} min read</strong></div>
+
 {{ .Content }}
 
 {{ end }}

@@ -30,14 +30,14 @@ params:
 
 menu:
   nav:
-    - name: Articles
+    - name: Diary
       url: /
       weight: 1
-    - name: Tags
+    - name: tags
       url: /tags/
       weight: 2
-    - name: About
-      url: /about/
+    - name: me
+      url: /me/
       weight: 3
 
 markup:

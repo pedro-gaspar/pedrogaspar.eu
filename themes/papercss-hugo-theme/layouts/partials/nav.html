@@ -14,9 +14,10 @@
     </button>
     <div class="collapsible-body">
       <ul class="inline">
-      {{ range .Site.Menus.nav }}
-        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
-      {{ end }}
+        <li><a href="/"><i class="lni lni-book"></i> diary</a></li>
+        <li><a href="/tags/"><i class="lni lni-tag"></i> tags</a></li>
+        <li><a href="/me/"><i class="lni lni-smile"></i> me</a></li>
+        <li><a href="/index.xml"><i class="lni lni-rss-feed"></i> rss</a></li>
       </ul>
     </div>
   </div>
