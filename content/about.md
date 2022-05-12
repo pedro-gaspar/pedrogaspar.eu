@@ -23,7 +23,7 @@ I'm the father of two small 👧👧 that I'm trying to help grow and become ama
 
 🏠 I live in a small town near Oporto, Portugal, called Penafiel.
 
-👷 I work at Beyond Pricing, with a bunch of great people, helping to build the best tool for Vacation Rental in the whole world and nearby planets.
+👷 I work at Remote, with an amazing group of kind folks, helping companies and employees from anywhere work remotly in every corner of planet Earth.
 
 🚀 I'm currently learning and writing about Elixir during the night
 
@@ -31,6 +31,7 @@ I'm the father of two small 👧👧 that I'm trying to help grow and become ama
 
 ## a long time ago in a galaxy far, far away...
 
+- Had a great time at Beyond Pricing, with a bunch of great people, helping to build the best tool for Vacation Rental in the whole world and nearby planets.
 - I worked at Mokrya doing a lot of frontend work in React/Redux and some Python/Django for Verizon
 - Worked with a lot of amazing folks at Talkdesk, working with React/Redux and Ruby
 - Co-founded two small startups doing a lot of work with Ruby on Rails and .Net
