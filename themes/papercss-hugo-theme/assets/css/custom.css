@@ -149,7 +149,7 @@ nav .collapsible {
 .thumbnail img:hover, nav:hover {
   animation: shake 0.5s;
 
-  filter: drop-shadow(2px 2px 8px black);
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 @keyframes shake {
