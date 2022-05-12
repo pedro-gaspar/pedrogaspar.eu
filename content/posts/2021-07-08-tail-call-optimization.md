@@ -2,8 +2,9 @@
 title: Should I always use tail recursion?
 date: 2021-07-08
 description: "The short answer is the dreaded ... it depends."
+image: images/posts/tail-call-optimization.png
 images:
-- images/featured/tail-call-optimization.png
+  - images/posts/tail-call-optimization.png
 tags:
   - Elixir
 ---
@@ -13,7 +14,6 @@ While trying to implement my own version of `map` for an Exercism exercise, I've
 ![](https://media.giphy.com/media/YcFOfbeTcHtVS/giphy.gif)
 
 Whenever we have recursive functions, if calling the function it's not the last operation being done, we may get into trouble by reaching the stack trace limit.
-
 
 ## Tail call recursion
 
@@ -198,10 +198,8 @@ Well, they almost feel to be taking the same time.
 
 ![](https://media.giphy.com/media/3jN3GziOKUEmI/giphy.gif)
 
-
 Instead of gut feeling or going with the one that seems right after timing a couple of times, let's do it right.
 We should put on our race judge hat and clock and let's make a race, or in fact, a lot of them.
-
 
 ## Benchmark FTW
 
@@ -549,7 +547,6 @@ Only with huge lists we actually see advantages in using tail call optimization.
 
 ![](https://media.giphy.com/media/l3q2DgSFjbAyseViM/giphy.gif)
 
-
 ## So should we always use tail call optimization?
 
 Well, it depends...
@@ -569,6 +566,7 @@ This is actually one of the [miths of erlang](http://erlang.org/doc/efficiency_g
 At the end of the day, it's a decision that should be based on the usage of the system you are building.
 
 For reference:
+
 - [Iteration, Recursion, and Tail-call Optimization in Elixir](https://blog.appsignal.com/2019/03/19/elixir-alchemy-recursion.html)
 - [The Seven Myths of Erlang Performance](http://erlang.org/doc/efficiency_guide/myths.html)
 - [tail recursion](https://xlinux.nist.gov/dads/HTML/tailRecursion.html)

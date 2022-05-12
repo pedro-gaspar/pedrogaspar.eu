@@ -2,8 +2,9 @@
 title: Running Elixir
 date: 2021-07-06
 description: "Different ways of running Elixir"
+image: images/posts/elixir-tutorial-running-elixir.png
 images:
-- images/featured/elixir-tutorial-running-elixir.png
+  - images/posts/elixir-tutorial-running-elixir.png
 tags:
   - Elixir
 ---
@@ -49,6 +50,7 @@ You can also run a file:
 iex(2)> c "hey_elixir.ex"
 Hello there, Elixir 🙂
 ```
+
 In this case, the file extension `.ex` means that this type of file is not a script, and it should be compiled. This is because scripts are compiled only they run, while these files are for longer-term usage, like a library or an application, so they should be compiled first.
 You can also edit the file and recompile it from inside the shell.
 
@@ -101,7 +103,7 @@ Hello world!
 :ok
 ```
 
-Notice that after you type `Hello`,  you can hit tab and have **autocomplete**.
+Notice that after you type `Hello`, you can hit tab and have **autocomplete**.
 
 `iex` is your friend, and in case you need help, well, just hit `h`.
 
@@ -244,9 +246,7 @@ Randomized with seed 623986
 
 All green :)
 
-
 Now let's change our application to have a `world` method instead:
-
 
 **lib/hello.ex**
 
@@ -517,6 +517,7 @@ defmodule Mix.Tasks.Hello do
   end
 end
 ```
+
 Was trying over and over to run like this
 
 ```sh

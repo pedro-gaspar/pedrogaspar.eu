@@ -2,8 +2,9 @@
 title: Super reduce
 date: 2021-07-09
 description: "A function that gives you superpowers."
+image: images/posts/super-reduce.png
 images:
-- images/featured/super-reduce.png
+  - images/posts/super-reduce.png
 tags:
   - Elixir
 ---
@@ -15,7 +16,6 @@ tags:
 But instead of just standing upon the shoulders of giants, it's good to know how things work under the hood.
 
 Let's implement some of **Enum** ourselves using plain old Elixir without the help of any module.
-
 
 ## map
 

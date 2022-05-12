@@ -2,8 +2,9 @@
 title: Elixir in a box
 date: 2021-07-05
 description: "You don't need to install Elixir"
+image: images/posts/elixir-tutorial-elixir-in-a-box.png
 images:
-- images/featured/elixir-tutorial-elixir-in-a-box.png
+  - images/posts/elixir-tutorial-elixir-in-a-box.png
 tags:
   - Elixir
 ---
@@ -34,7 +35,6 @@ CMD mix deps.get
 
 Then a docker-compose file. This will be useful later on when you add more pieces to your system like a database.
 
-
 **docker-compose.yml**
 
 ```sh
@@ -62,6 +62,5 @@ And just like that, you have a running `iex`.
 Well, depending on your network to download the images and if you already have `docker` and `docker-compose` installed. But you get my point 😏
 
 And you are ready to go. For now I'll keep using Elixir locally on my Ubuntu, you can call me old school, but this is surely a great alternative.
-
 
 For reference: [Development environment for Elixir + Phoenix with Docker and Docker-compose](https://dev.to/hlappa/development-environment-for-elixir-phoenix-with-docker-and-docker-compose-2g17)

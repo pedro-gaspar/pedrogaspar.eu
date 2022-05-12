@@ -1,16 +1,31 @@
 {{ define "main" }}
 
-<h1>{{ .Title }}111</h1>
+<h1>{{ .Title }}</h1>
 {{ .Content }}
 {{ $pages := .Pages }}
 {{ range $pages.ByPublishDate.Reverse }}
-  <h2 class="post-list {{ if ne .Params.show_summary false }}summary{{ end }}">
-    <a href="{{ .RelPermalink }}">1111
-      aaaa
-    </a>
-  </h2>
-  {{ if ne .Params.show_summary false }}
-    {{ .Summary }}
-  {{ end }}
+  <div class="posts-list">
+    <div class="thumbnail">
+      <a href="{{ .RelPermalink }}">
+        <img src="/{{ with .Params.image }}{{ . }}{{ end }}" />
+      </a>
+    </div>
+    <div class="summary">
+      <a href="{{ .RelPermalink }}">
+        <h2 class="post-list {{ if ne .Params.show_summary false }}summary{{ end }}">
+          {{ .Title }}
+        </h2>
+      </a>
+      <div><strong><a href="{{ .RelPermalink }}"></a>{{ .Date.Format "Mon, Jan 2, 2006" }}</a></strong></div>
+
+      {{ if ne .Params.show_summary false }}
+        <div class="text">
+          <a href="{{ .RelPermalink }}">
+            {{ .Description | markdownify }}
+          </a>
+        </div>
+      {{ end }}
+    </div>
+  </div>
 {{ end }}
 {{ end }}

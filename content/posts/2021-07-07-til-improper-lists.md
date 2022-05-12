@@ -1,9 +1,10 @@
 ---
 title: Quacks like a list, but it's not a list
 date: 2021-07-07
-description: 'This will happen someday'
+description: "This will happen someday"
+image: images/posts/til-improper-lists.png
 images:
-- images/featured/til-improper-lists.png
+  - images/posts/til-improper-lists.png
 tags:
   - Elixir
   - Today I Learned
@@ -59,6 +60,7 @@ iex(4)> head
 iex(5)> tail
 2
 ```
+
 > But it's not a duck.
 
 ![](https://media.giphy.com/media/LPHXLKEOZw6T6/giphy.gif)

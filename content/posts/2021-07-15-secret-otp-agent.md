@@ -2,8 +2,9 @@
 title: Secret OTP Agent
 date: 2021-07-15
 description: "Let's learn OTP Agent by building our own version."
+image: images/posts/secret-agent.png
 images:
-- images/featured/secret-agent.png
+  - images/posts/secret-agent.png
 tags:
   - Elixir
   - OTP
@@ -98,7 +99,6 @@ false
 
 So we need to prevent the process from dying. We can do it in two possible ways, recursion or waiting for a new message.
 Let's start with the first one.
-
 
 ```elixir
 defmodule OoohTP.SecretAgent do

@@ -2,8 +2,9 @@
 title: Good looking tweet
 date: 2021-07-10
 description: "Make your blog posts look better on Twitter."
+image: images/posts/twitter.jpeg
 images:
-- images/featured/twitter.jpeg
+  - images/posts/twitter.jpeg
 tags:
   - Hugo
   - Twitter
@@ -22,12 +23,18 @@ After checking [https://developer.twitter.com](https://developer.twitter.com/en/
 You should add the following meta tags:
 
 ```html
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@nytimes">
-<meta name="twitter:creator" content="@SarahMaslinNir">
-<meta name="twitter:title" content="Parade of Fans for Houston’s Funeral">
-<meta name="twitter:description" content="NEWARK - The guest list and parade of limousines with celebrities emerging from them seemed more suited to a red carpet event in Hollywood or New York than than a gritty stretch of Sussex Avenue near the former site of the James M. Baxter Terrace public housing project here.">
-<meta name="twitter:image" content="http://graphics8.nytimes.com/images/2012/02/19/us/19whitney-span/19whitney-span-articleLarge.jpg">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nytimes" />
+<meta name="twitter:creator" content="@SarahMaslinNir" />
+<meta name="twitter:title" content="Parade of Fans for Houston’s Funeral" />
+<meta
+  name="twitter:description"
+  content="NEWARK - The guest list and parade of limousines with celebrities emerging from them seemed more suited to a red carpet event in Hollywood or New York than than a gritty stretch of Sussex Avenue near the former site of the James M. Baxter Terrace public housing project here."
+/>
+<meta
+  name="twitter:image"
+  content="http://graphics8.nytimes.com/images/2012/02/19/us/19whitney-span/19whitney-span-articleLarge.jpg"
+/>
 ```
 
 So let's add those to my [Hugo](https://gohugo.io/) blog.
@@ -40,7 +47,7 @@ title: Good looking tweet
 date: 2021-07-10
 description: "Make your blog posts look better on Twitter."
 images:
-- images/twitter.jpeg
+  - images/twitter.jpeg
 tags:
   - Hugo
   - Twitter

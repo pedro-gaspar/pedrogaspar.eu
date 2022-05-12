@@ -2,8 +2,9 @@
 title: How To Remember Everything You Learn
 date: 2021-06-27
 description: 'Transcript and notes from the awesome Will Shoder Youtube video on "How To Remember Everything You Learn"'
+image: images/posts/how-to-remember-everything-you-learn.png
 images:
-- images/featured/how-to-remember-everything-you-learn.png
+  - images/posts/how-to-remember-everything-you-learn.png
 tags:
   - Learning
 ---
@@ -18,7 +19,7 @@ A few months ago I ran into this awesome video that made me think a lot about ho
 
 Here's a situation. I watch a video where its creator synthesizes all kinds of ideas and comes to an interesting conclusion.
 
->"I think, wow! I know all about that now."
+> "I think, wow! I know all about that now."
 
 Then a few hours later, I can sort of recall its main points, but if someone asked me to explain it in-depth, I'd fumble for words. This happens to me all the time. It happens when I finish chapters of books, television episodes, movies, podcasts, articles, you name it. The story I tell myself is that upon completing any reading of listening, I feel like I know what it's all about.
 
@@ -35,7 +36,7 @@ I tricked myself into thinking I was competent. In the course **Learning how to 
 
 Philosopher Mortimer Adler once said:
 
->"The person who says he knows what he thinks but cannot express it, usually does not know what he thinks."
+> "The person who says he knows what he thinks but cannot express it, usually does not know what he thinks."
 
 This is the fundamental difference between feeling informed and truly understanding something.
 
@@ -68,7 +69,6 @@ I have to do a lot of active reading, listen to as many arguments as I can. Argu
 How am I supposed to form an opinion or understand something when I keep forgetting all the information I digest?
 
 One of the many reasons why people have trouble explaining videos, books or articles is because they simply don't remember what was said.
-
 
 It's worth then understanding how memory works.
 
@@ -172,7 +172,7 @@ It's a call to increase the quality of information you receive rather than the q
 
 Union College Psychologist and Nobel Prize winner Christopher Sabri says:
 
-> "The internet plays to our natural tendency to vastly overvalue  what happens to us right now."
+> "The internet plays to our natural tendency to vastly overvalue what happens to us right now."
 
 Our bias towards novelty is strong and forces us towards the trivial rather than the essential.
 No matter the amount of work anyone does, people will continue to hold different opinions, and that's when intellectual humility becomes important.
@@ -181,7 +181,7 @@ No matter the amount of work anyone does, people will continue to hold different
 
 It's not only when learning happens, but it's also where disagreements become more constructive.
 
-I think Cal Turnbull, founder of the *Change my view* subreddit sums it up:
+I think Cal Turnbull, founder of the _Change my view_ subreddit sums it up:
 
 > "It seems to be in our nature to focus on how we were wrong over the fact that we're now smarter (as if we can't be works in progress). And we often attach our egos to what we believe. A view is just how you see something. It doesn't have to define you, and trying to detach from it to gain understanding can be a very good thing."
 
@@ -201,13 +201,13 @@ What's on trial is not just the weight of our opinions, but our entire understan
 
 ## Personal notes
 
-- *The person who says he knows what he thinks but cannot express it usually does not know what he thinks.*
+- _The person who says he knows what he thinks but cannot express it usually does not know what he thinks._
 - To go past working memory and retain knowledge, in the long run, I have to keep it in the working memory for an extended time. And build schemas and connections to it.
 - Eliminate multitasking, distractions and information streams that cause overload (perhaps reduce twitter consumption, remove slack from a mobile phone).
 - Use Recall, Feynman technique, and spaced repetition
 - Nurture the topics I want to master
 - "Let it go" attitude to all stuff that seems fun but you don't really want to commit to it
-- *True freedom is impossible without a mind made free by discipline.*
+- _True freedom is impossible without a mind made free by discipline._
 
 ### Recall
 

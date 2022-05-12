@@ -1,9 +1,10 @@
 ---
 title: Named captures in Elixir Regular Expressions
 date: 2021-06-29
-description: 'If you need it, give it a name.'
+description: "If you need it, give it a name."
+image: images/posts/til-named-captures.png
 images:
-- images/featured/til-named-captures.png
+  - images/posts/til-named-captures.png
 tags:
   - Elixir
   - Today I Learned

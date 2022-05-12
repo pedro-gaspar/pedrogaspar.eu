@@ -1,9 +1,10 @@
 ---
 title: Debugging Elixir
 date: 2021-07-11
-description: 'Solving your own code commited crimes'
+description: "Solving your own code commited crimes"
+image: images/posts/debugging-elixir.png
 images:
-- images/featured/debugging-elixir.png
+  - images/posts/debugging-elixir.png
 tags:
   - Elixir
   - Debugging
@@ -280,16 +281,11 @@ After that, click on _"create a launch.json file"_. This will create a default c
       "name": "mix test",
       "request": "launch",
       "task": "test",
-      "taskArgs": [
-        "--trace"
-      ],
+      "taskArgs": ["--trace"],
       "startApps": true,
       "projectDir": "${workspaceRoot}",
-      "requireFiles": [
-        "test/**/test_helper.exs",
-        "test/**/*_test.exs"
-      ]
-    },
+      "requireFiles": ["test/**/test_helper.exs", "test/**/*_test.exs"]
+    }
   ]
 }
 ```
@@ -340,12 +336,9 @@ It will stop in the breakpoint to inspect values, add watches and step into and 
 
 ![](/images/vscode-debug4.png)
 
-
 With these tools, you are ready to solve any crime you commit in your code.
 
 ![](https://media.giphy.com/media/26FLa6peMp3ZNzKnu/giphy.gif)
-
-
 
 **References**
 

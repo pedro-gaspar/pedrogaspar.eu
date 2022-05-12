@@ -2,8 +2,9 @@
 title: Elixir, the documentary
 date: 2021-07-01
 description: "Learn the origins of the Elixir programming language..."
+image: images/posts/elixir-the-documentary.png
 images:
-- images/featured/elixir-the-documentary.png
+  - images/posts/elixir-the-documentary.png
 tags:
   - Elixir
 ---
@@ -48,6 +49,7 @@ defmodule Hello do
   end
 end
 ```
+
 Then open a shell and run this amazing code.
 
 ```sh
@@ -68,6 +70,7 @@ iex(bob@bob.localdomain)2> Hello.world()
 Hello world
 :ok
 ```
+
 It of course displays "Hello word". Going back to _alice_ machine:
 
 ```sh
@@ -79,6 +82,7 @@ iex(alice@alice.localdomain)1> Hello.world()
 ** (UndefinedFunctionError) function Hello.world/0 is undefined (module Hello is not available)
     Hello.world()
 ```
+
 It doesn't work because it was defined on another computer (_bob_).
 However, if we spawn a process running in _bob_:
 
@@ -87,19 +91,20 @@ iex(alice@spiderman.localdomain)1> Node.spawn(:"bob@bob.localdomain", fn -> Hell
 Hello world
 #PID<11982.130.0>
 ```
+
 It works 🤯 !!!
 
 Invoking from _alice_ computer executes the program in _bob_ node.
 
 Had to check the same example with two home computers. 👌
 
-With the Phoenix Web Framework, it has a  Presence feature, which has a pub-sub mechanism in which you can send and receive messages from anybody connected from any machine. And you can know who is connected in the whole cluster (who is joining, who is leaving) without needing databases or third-party dependencies.
+With the Phoenix Web Framework, it has a Presence feature, which has a pub-sub mechanism in which you can send and receive messages from anybody connected from any machine. And you can know who is connected in the whole cluster (who is joining, who is leaving) without needing databases or third-party dependencies.
 
 Development was always open from the get-go. And the interest started to grow and grow.
 
 Justin Schneck, co-author of the Nerves Project:
-> It has capabilities of IoT connectivity on the scale of millions of devices.
 
+> It has capabilities of IoT connectivity on the scale of millions of devices.
 
 Chris McCord, the creator of the Phoenix Framework
 

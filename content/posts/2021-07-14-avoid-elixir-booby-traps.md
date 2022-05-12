@@ -1,9 +1,10 @@
 ---
 title: Avoid Elixir booby traps
 date: 2021-07-14
-description: 'Coming from an object-oriented background, you will fall into some Elixir booby traps.'
+description: "Coming from an object-oriented background, you will fall into some Elixir booby traps."
+image: images/posts/traps.png
 images:
-- images/featured/traps.png
+  - images/posts/traps.png
 tags:
   - elixir
 ---
@@ -104,7 +105,6 @@ iex(42)> [100000]
 [100000]
 ```
 
-
 ## Changing variables inside if statements
 
 You are used to doing something like this.
@@ -158,7 +158,6 @@ iex(2)> y
 ```
 
 This is a pretty good language decision. It enables you to refactor your code with more confidence.
-
 
 ## Variables rebind when pattern matched
 
@@ -369,7 +368,6 @@ iex(15)> looks_like_a_python_dict["y"] = 1
 
 ![](https://media.giphy.com/media/t6WvtUluR8V2NSxLlk/giphy.gif)
 
-
 This is not an array and not and object.
 
 But there's the right way to do this in Elixir:
@@ -382,7 +380,6 @@ iex(3)> looks_like_a_python_dict = %{looks_like_a_python_dict | x: 1}
 iex(4)> looks_like_a_python_dict = Map.put(looks_like_a_python_dict, "y", 1)
 %{:x => 1, "y" => 1}
 ```
-
 
 ## strings are not arrays of chars
 

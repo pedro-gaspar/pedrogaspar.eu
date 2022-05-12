@@ -1,9 +1,11 @@
 ---
 title: When to tap Elixir in the shoulder
 date: 2021-07-12
-description: 'Whenever you can, there is no try.'
+description: "Whenever you can, there is no try."
+image: images/posts/baby-yoda.png
+
 images:
-- images/featured/baby-yoda.png
+  - images/posts/baby-yoda.png
 tags:
   - Elixir
 ---
@@ -89,12 +91,12 @@ defmodule Starwars do
   end
 end
 ```
+
 **`case`** can help in this case (pun not intended), and we don't need extra variables. The work is all done in a pipeline flow of data transformations.
 
 Beautiful? 🤔
 
 ![](https://media.giphy.com/media/j6sijUUfTW2XL4KUNu/giphy.gif)
-
 
 Not that much, right...
 
@@ -175,8 +177,8 @@ defmodule Starwars do
   end
 end
 ```
-![](https://media.giphy.com/media/Ld77zD3fF3Run8olIt/giphy.gif)
 
+![](https://media.giphy.com/media/Ld77zD3fF3Run8olIt/giphy.gif)
 
 Pretty neat, right? ♥
 

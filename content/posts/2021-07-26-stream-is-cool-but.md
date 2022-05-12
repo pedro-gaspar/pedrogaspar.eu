@@ -2,8 +2,9 @@
 title: Stream is cool, but...
 date: 2021-07-26
 description: "Use it wisely. For some use cases, it is a lot worse."
+image: images/posts/elixir-streams.png
 images:
-- images/featured/elixir-streams.png
+  - images/posts/elixir-streams.png
 tags:
   - Elixir
 ---
@@ -13,9 +14,9 @@ tags:
 When you come to Elixir with big object-oriented baggage, you try to map some of your solutions to what you previously did. Let's try to build a list on even numbers, for instance using **javascript**:
 
 ```javascript
-let even = []
+let even = [];
 for (let i = 0; i < 2000; i += 2) {
-  even.push(i)
+  even.push(i);
 }
 ```
 
@@ -31,13 +32,11 @@ Wait, we have that shinny [Stream](https://hexdocs.pm/elixir/1.12/Stream.html) t
 
 Stream is very cool. Due to their laziness, streams are helpful when working with large (or even infinite) lists.
 
-
 ```elixir
 some_big_list |> Stream.map(...) |> Stream.map(...) |> Enum.sum()
 ```
 
 For pipelines where you do lots of transformations it will for sure be helpful. Let's use it here.
-
 
 ```elixir
 Stream.iterate(0, &(&1 + 2)) |> Stream.take_while(&(&1 <= 2000)) |> Enum.to_list()
@@ -52,6 +51,7 @@ Easy peasy, lemmon squeezy. Now let's try it with a really big list:
 ```elixir
 Stream.iterate(0, &(&1 + 2)) |> Stream.take_while(&(&1 <= 2000000)) |> Enum.to_list()
 ```
+
 Weird, it seemed a bit slow. So let's make it even more significant.
 
 ![](https://media.giphy.com/media/vMbC8xqhIf9ny/giphy.gif)
@@ -79,6 +79,7 @@ Now let's try using `Enum`. Should be similar in speed 🤔:
 ```elixir
 def using_enum(number), do: 0..number |> Enum.filter(&(rem(&1, 2) == 0))
 ```
+
 Let's try to do it better by using a **range**:
 
 ```elixir
@@ -117,7 +118,6 @@ And finally, with our **stream**:
 ```
 
 So let's benchmark it:
-
 
 ![](https://media.giphy.com/media/p0FeUCcB2IrPq/giphy.gif)
 
@@ -167,6 +167,7 @@ using_comprehension         27.33 K - 9.08x slower +32.56 μs
 using_enum                  20.69 K - 11.99x slower +44.30 μs
 using_stream               15.20 K - 16.32x slower +61.77 μs
 ```
+
 Nothing changed all that much. In comparison, the results are a lot worse compared to the recursion version. Now let's try with a huge list.
 
 ![](https://media.giphy.com/media/nM6H7dozprJa8/giphy.gif)
@@ -234,7 +235,6 @@ using_stream                8.37 K - 1.92x slower +57.13 μs
 
 Even though the order is the same, there isn't such a massive difference between versions as it did in the benchmark for even numbers.
 But now, let's go to the humongous list.
-
 
 ```elixir
 iex(1)> BigList.benchmark(2000000)

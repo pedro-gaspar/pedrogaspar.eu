@@ -2,8 +2,9 @@
 title: Enable history in iex
 date: 2021-06-28
 description: "It\'s pretty handy to get shell history in iex."
+image: images/posts/enable-history-in-iex.png
 images:
-- images/featured/enable-history-in-iex.png
+- images/posts/enable-history-in-iex.png
 tags:
   - IEx
   - Elixir

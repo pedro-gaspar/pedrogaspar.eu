@@ -2,8 +2,9 @@
 title: X never ever marks the spot
 date: 2021-06-26
 description: "Starting the path to re-learn Elixir"
+image: images/posts/x-never-ever-marks-the-spot.png
 images:
-  - images/featured/x-never-ever-marks-the-spot.png
+  - images/posts/x-never-ever-marks-the-spot.png
 tags:
   - Elixir
 ---
@@ -59,11 +60,4 @@ Like all treasures, the path to discovering them isn’t clear. It requires a lo
 
 I’ll use this blog as a diary containing all my findings required to face the final challenge with confidence to choose wisely. Drink from the right cup, the holy grail of Elixir knowledge 🏆.
 
-> _Prof. Jones_ **“Well, he who finds the Grail must face the final challenge.”**<br/>
-> _Indiana_ **“What final challenge?”**<br/>
-> _Prof. Jones_ **“Three devices of such lethal cunning.”**<br/>
-> _Indiana_ **“Booby traps?”**<br/>
-> _Prof. Jones_ **“Oh, yes. But I found the clues that will safely take us through them in the Chronicles of St. Anselm.”**<br/>
-> _Indiana_ **“Well, what are they?”**<br/>
-> _Indiana_ **“Can't you remember?”**<br/>
-> _Prof. Jones_ **“I wrote them down in my diary so that I wouldn't have to remember.”**
+> _Prof. Jones_ **“Well, he who finds the Grail must face the final challenge.”**<br/> > _Indiana_ **“What final challenge?”**<br/> > _Prof. Jones_ **“Three devices of such lethal cunning.”**<br/> > _Indiana_ **“Booby traps?”**<br/> > _Prof. Jones_ **“Oh, yes. But I found the clues that will safely take us through them in the Chronicles of St. Anselm.”**<br/> > _Indiana_ **“Well, what are they?”**<br/> > _Indiana_ **“Can't you remember?”**<br/> > _Prof. Jones_ **“I wrote them down in my diary so that I wouldn't have to remember.”**
