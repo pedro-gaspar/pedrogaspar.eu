@@ -1,7 +1,7 @@
 ---
 title: Named captures in Elixir Regular Expressions
 date: 2021-06-29
-description: "If you need it, give it a name."
+description: "It's a lot better to reference Elixir captures by name instead of index position."
 image: images/posts/til-named-captures.png
 images:
   - images/posts/til-named-captures.png
@@ -9,6 +9,10 @@ tags:
   - Elixir
   - Today I Learned
 ---
+
+{{< alert "secondary" >}}
+It's a lot better to reference Elixir captures by name instead of index position.
+{{< /alert >}}
 
 ![](https://media.giphy.com/media/6uPOdgLIuhHYQ/giphy.gif)
 
@@ -22,6 +26,7 @@ iex(1)> Regex.run(~r/a(b)c(d)/, "abcde")
 ```
 
 You get a list with all the matches. In this case, you also get a match for the whole matched regex.
+
 That usually is not that useful, so you can skip it with `:all_but_first`.
 
 ```elixir
@@ -29,7 +34,9 @@ iex(2)> Regex.run(~r/a(b)c(d)/, "abcde", capture: :all_but_first)
 ["b", "d"]
 ```
 
-Better. Now you can then pattern match it:
+Much better 😊.
+
+Now you can pattern match:
 
 ```elixir
 iex(3)> [first, second] = Regex.run(~r/a(b)c(d)/, "abcde", capture: :all_but_first)
@@ -40,14 +47,14 @@ iex(5)> second
 "d"
 ```
 
-But later on you do a change and include a new match:
+But later on, you can perhaps do a slight change and include a new match:
 
 ```elixir
 iex(6)> [first, second] = Regex.run(~r/(a)(b)c(d)/, "abcde", capture: :all_but_first)
 ** (MatchError) no match of right hand side value: ["a", "b", "d"]
 ```
 
-You fix it by adding a new variable, but:
+The way to fix it is by adding a new variable, but:
 
 ```elixir
 iex(7)> [first, second, third] = Regex.run(~r/(a)(b)c(d)/, "abcde", capture: :all_but_first)
@@ -60,12 +67,16 @@ iex(10)> second
 "d"
 ```
 
-Well the variables `first` and `second` are now capturing another thing. So to fix it you could do this, but everyone will look at you with crazy eyes 🙄🤬:
+Well, the variables `first` and `second` are now capturing another thing.
+
+To fix it you could do this:
 
 ```elixir
 iex(11)> [third, first, second] = Regex.run(~r/(a)(b)c(d)/, "abcde", capture: :all_but_first)
 ["a", "b", "d"]
 ```
+
+But everyone will look at you with crazy eyes 🙄🤬
 
 > If you need it, give it a name. 😄
 

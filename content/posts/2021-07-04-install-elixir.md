@@ -1,7 +1,7 @@
 ---
 title: Installing Elixir in your local machine
 date: 2021-07-04
-description: "ASDF FTW"
+description: "Use the **asdf** as a version manager to install Elixir on your local computer."
 image: images/posts/elixir-tutorial-install-elixir.png
 images:
   - images/posts/elixir-tutorial-install-elixir.png
@@ -9,7 +9,11 @@ tags:
   - Elixir
 ---
 
-The first thing you need to start hacking with Elixir is ... well ... Elixir 😏.
+{{< alert "secondary" >}}
+Use the **asdf** as a version manager to install Elixir on your local computer.
+{{< /alert >}}
+
+The first thing you need to start hacking with Elixir is ... well ... erm ... Elixir 😏.
 
 If you want to install it on your local machine, there are plenty of options. You can see them in the Elixir [docs](https://elixir-lang.org/install.html).
 
@@ -23,7 +27,7 @@ That's because you use the same version manager for different languages. You usu
 
 You can set up everything in one place. And you can even have different versions installed and have a `.tool_versions` file specifying which versions are used when you are inside a directory.
 
-To install it, just follow the [instructions](https://asdf-vm.com/#/core-manage-asdf). In my case, I'll be installing in a Ubuntu machine, but the steps are pretty similar for Mac, except installing the required dependencies.
+To install it, just follow the [instructions](https://asdf-vm.com/#/core-manage-asdf). In my case, I'll be installing in a Ubuntu machine, but the steps are pretty similar for Mac, except for installing the required dependencies.
 
 ## Install git
 
@@ -68,7 +72,7 @@ $ source ~/.zshrc
 
 You have a list of [available plugins](https://asdf-vm.com/#/plugins-all), with instructions on installing required dependencies for a specific language.
 
-For Elixir you will need to install Erlang first. First you install the required system dependencies for Erlang to work:
+For Elixir you will need to install Erlang first. First, you install the required system dependencies for Erlang to work:
 
 ```sh
 $ sudo apt-get -y install build-essential autoconf m4 libncurses5-dev libwxgtk3.0-gtk3-dev libgl1-mesa-dev libglu1-mesa-dev libpng-dev libssh-dev unixodbc-dev xsltproc fop libxml2-utils libncurses-dev openjdk-11-jdk

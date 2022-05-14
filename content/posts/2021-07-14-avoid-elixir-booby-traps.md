@@ -9,6 +9,9 @@ tags:
   - elixir
 ---
 
+{{< alert "secondary" >}}
+{{< /alert >}}
+
 Coming from an object-oriented background, you will fall into some Elixir booby traps.
 
 I'll highlight some common ones where, I spent a few minutes looking at the screen, looking like this:

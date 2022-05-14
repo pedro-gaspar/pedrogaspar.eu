@@ -1,7 +1,7 @@
 ---
 title: Debugging Elixir
 date: 2021-07-11
-description: "Solving your own code commited crimes"
+description: "Different techniques to help you debug code in Elixir."
 image: images/posts/debugging-elixir.png
 images:
   - images/posts/debugging-elixir.png
@@ -11,15 +11,19 @@ tags:
   - VSCode
 ---
 
-> Debugging is being the detective in crime movies where you are also the murderer.
+{{< alert "secondary" >}}
+Different techniques to help you debug code in Elixir.
+{{< /alert >}}
 
 ![](https://media.giphy.com/media/3o6ZtksqDdL9K3u4rC/giphy.gif)
 
-Detectives have tools to help them. They can be old-fashioned Sherlock Holmes and need a magnifying glass or go full CSI and have a computer that cross-checks fingerprints slowly showing one at a time on the tv screen. 🤦
+> Debugging is being the detective in crime movies where you are also the murderer.
 
-You will indeed commit crimes 💩🐛 during development, so what tools does Elixir have to get your back?
+Detectives have tools to help them. They can be old-fashioned like Sherlock Holmes and need a magnifying glass or go full CSI and have a computer that cross-checks fingerprints slowly showing one at a time on the tv screen. 🤦
 
-## Old school _IO.puts_
+You will indeed commit crimes 💩🐛 during development, so what tools does Elixir have to help you?
+
+## Old school `IO.puts`
 
 ![](https://media.giphy.com/media/3oEjHD20zWeDvGWoF2/giphy.gif)
 
@@ -35,13 +39,13 @@ iex(4)> IO.puts("------>" <> username)
 
 The problem with it is that we have to print a string or string-compatible format.
 
-## Old school with steroids _IO.inspect_
+## Old school with steroids `IO.inspect`
 
 ![](https://media.giphy.com/media/W4NvANl5jdrji/giphy.gif)
 
-Doing **IO.puts** is not ideal, especially if you want to print info about some complex data structure like a map or a tuple.
+Doing `IO.puts` is not ideal, especially if you want to print info about some complex data structure like a map or a tuple.
 
-**IO.inspect** got your back. It will do the proper conversion to a string and display helpful information.
+`IO.inspect` got your back. It will do the proper conversion to a string and display helpful information.
 
 ```elixir
 iex(1)> conn = %{status: 504}
@@ -76,7 +80,7 @@ stuff
 |> does_even_more_stuff()
 ```
 
-But `IO.inspect` is a perfect match for this because it returns it's argument unchanged so you can just do:
+But `IO.inspect` is a perfect match for this because it returns its argument unchanged so you can just do:
 
 ```elixir
 ["some", "weird", "debugging"]
@@ -99,13 +103,13 @@ You can even add labels to help you during this kind of debugging:
 |> does_even_more_stuff()
 ```
 
-## IEX.pry magnifying glass
+## `IEX.pry` magnifying glass
 
 ![](https://media.giphy.com/media/l2JdZX7Fk0hqQGwzm/giphy.gif)
 
 Sometimes, instead of printing every variable, you want to check some variables or see the results of applying a function given a specific state.
 
-**IEX.pry** will help you with that. It will allow you to stop the application in a specific line in your code.
+`IEX.pry` will help you with that. It will allow you to stop the application in a specific line in your code.
 
 Consider the following example. There's a crime being committed, but we don't know where. 🙈🙉🙊
 
@@ -117,7 +121,7 @@ defmodule Crime do
 end
 ```
 
-To use **IEX.pry** you just need to add the following to the place you want to debug:
+To use `IEX.pry` you just need to add the following to the place you want to debug:
 
 ```elixir
 require IEX; IEX.pry
@@ -170,11 +174,11 @@ This approach is great but has some cons 😐:
 
 If you want to have multiple debug steps, add `require IEx; IEx.pry` for each, and continue to the next breakpoint.
 
-## IEx _break!_ it out
+## `IEx break!` it out
 
 ![](https://media.giphy.com/media/l2JdT10OBwXcl8g1O/giphy.gif)
 
-Instead of needing to hardcode the **IEX.pry** breakpoints, you can just set a breakpoint before executing the code.
+Instead of needing to hardcode the `IEX.pry` breakpoints, you can just set a breakpoint before executing the code.
 
 Using the same example:
 
@@ -221,9 +225,9 @@ Location: lib/crime.ex:2
 pry(3)> respawn()
 ```
 
-We didn't need to change any line of our code to set the breakpoint, which is a lot better. 👌 You can also specify in break the number of times it will break.
+We didn't need to change any line of our code to set the breakpoint, which is a lot better. 👌 You can also specify in `break` the number of times it will break.
 
-## Testing with _IEx.pry_
+## Testing with `IEx.pry`
 
 ![](https://media.giphy.com/media/l0G18t2rt94wUI6yc/giphy.gif)
 
@@ -254,7 +258,9 @@ $ iex -S mix test --trace
 
 ![](https://media.giphy.com/media/3o7TKw6X7zBf3IbiPm/giphy.gif)
 
-Left the best for last. If you are a Visual Studio Code user, you are in a good place for debugging Elixir.
+Left the best for last.
+
+If you are a Visual Studio Code user, you are in a good place for debugging Elixir.
 
 The first step is to install the **ElixirLS** extension.
 
@@ -332,7 +338,7 @@ And then click to start the debug session.
 
 ![](/images/posts/vscode-debug3.png)
 
-It will stop in the breakpoint to inspect values, add watches and step into and over the following lines.
+It will stop at the breakpoint to inspect values, add watches and step into and over the following lines.
 
 ![](/images/posts/vscode-debug4.png)
 

@@ -1,7 +1,7 @@
 ---
-title: When to tap Elixir in the shoulder
+title: tap Elixir in the shoulder
 date: 2021-07-12
-description: "Whenever you can, there is no try."
+description: "`tap` and `then` are the missing pieces to use anonymous functions in pipelines."
 image: images/posts/baby-yoda.png
 
 images:
@@ -10,11 +10,17 @@ tags:
   - Elixir
 ---
 
+{{< alert "secondary" >}}
+`tap` and `then` are the missing pieces to use anonymous functions in pipelines.
+{{< /alert >}}
+
 ![](https://media.giphy.com/media/f9jfbOcTBLBAFXIABe/giphy.gif)
 
 Big features like LiveView or LiveBook are amazing and prove that the ecosystem is growing a lot, and that's great. But the small little improvements sometimes are the best proof that there is love to the language, even in the smallest details.
 
-While doing some Exercism exercises, sometimes I had to stop doing a pipeline to get some value or change the order of some tuple. In the end, it made me feel sad because the flow of the pipeline had to be interrupted, just because...
+While doing some Exercism exercises, sometimes I had to stop doing a pipeline to get some value or change the order of some tuple. Or use `Kernel.==` is just meh.
+
+In the end, it made me feel sad because the flow of the pipeline had to be interrupted, just because...
 
 Let's see an example, we want the result of a function to be a sum of filtered version of persons that like starwars:
 

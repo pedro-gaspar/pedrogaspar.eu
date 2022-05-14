@@ -1,13 +1,17 @@
 ---
 title: Elixir, the documentary
 date: 2021-07-01
-description: "Learn the origins of the Elixir programming language..."
+description: "Learn the origins of the Elixir programming language from the one and only José Valim"
 image: images/posts/elixir-the-documentary.png
 images:
   - images/posts/elixir-the-documentary.png
 tags:
   - Elixir
 ---
+
+{{< alert "secondary" >}}
+Learn the origins of the Elixir programming language from the one and only José Valim
+{{< /alert >}}
 
 {{< youtube lxYFOM3UJzo >}}
 
@@ -22,11 +26,11 @@ Testimonial from _Qixxit_:
 
 > Of course, we had some hiccups with bugs in the code. Still, we never had outages in terms of the infrastructure, which is an excellent indication that we are using the right technology because I've never experienced this before.
 
-It's just amazing that he developed and built a language like Elixir with a great ecosystem and a warm and welcoming community. Most other recent languages like Go or Rust, to achieve the same, had a big corporation like Google or Mozilla to support its growth.
+It's just amazing that he developed and built a language like Elixir with a great ecosystem and a warm and welcoming community. Most other recent languages like Go or Rust, to achieve the same, had a big corporation like Google or Mozilla to support their growth.
 
 José Valim:
 
-> One of the big things of Elixir that we get from building on top of the Erlang VM is that it allows us to write distributed software. Software that runs in more than one machine.
+> One of the big things of Elixir that we get from building on top of the Erlang VM is that it allows us to write distributed software. Software that runs on more than one machine.
 
 On one machine (_bob_):
 
@@ -53,7 +57,7 @@ end
 Then open a shell and run this amazing code.
 
 ```sh
-➜  ~ iex --name bob --cookie "shared-secret"
+➜  iex --name bob --cookie "shared-secret"
 Erlang/OTP 24 [erts-12.0.2] [source] [64-bit] [smp:12:12] [ds:12:12:10] [async-threads:1] [jit]
 
 Interactive Elixir (1.12.1) - press Ctrl+C to exit (type h() ENTER for help)
@@ -71,10 +75,10 @@ Hello world
 :ok
 ```
 
-It of course displays "Hello word". Going back to _alice_ machine:
+It of course displays "Hello world". Going back to _alice_ machine:
 
 ```sh
-➜  ~ iex --name alice --cookie "shared-secret"
+➜  iex --name alice --cookie "shared-secret"
 Erlang/OTP 24 [erts-12.0.2] [source] [64-bit] [smp:24:24] [ds:24:24:10] [async-threads:1] [jit]
 
 Interactive Elixir (1.12.1) - press Ctrl+C to exit (type h() ENTER for help)
@@ -98,19 +102,19 @@ Invoking from _alice_ computer executes the program in _bob_ node.
 
 Had to check the same example with two home computers. 👌
 
-With the Phoenix Web Framework, it has a Presence feature, which has a pub-sub mechanism in which you can send and receive messages from anybody connected from any machine. And you can know who is connected in the whole cluster (who is joining, who is leaving) without needing databases or third-party dependencies.
+With the Phoenix Web Framework, it has a Presence feature, which has a pub-sub mechanism in which you can send and receive messages from anybody connected to any machine. And you can know who is connected in the whole cluster (who is joining, who is leaving) without needing databases or third-party dependencies.
 
 Development was always open from the get-go. And the interest started to grow and grow.
 
-Justin Schneck, co-author of the Nerves Project:
+_Justin Schneck, co-author of the Nerves Project:_
 
 > It has capabilities of IoT connectivity on the scale of millions of devices.
 
-Chris McCord, the creator of the Phoenix Framework
+_Chris McCord, the creator of the Phoenix Framework_
 
 > Phoenix is a web framework for the Elixir programming language, and it really is like a batteries-included web framework for the platform. It allowed an experiment to connect 2 million users to a single server. It enables a lot of innovation. 🔋🔋🔋
 
-José Valim
+_José Valim_
 
 > If I try to centralize and do everything on my own, I won't be able to do it. But if everybody can contribute a small part to this and with everybody together, we can do that and bring the community forward. Then we have a chance of actually making a lasting impact.
 

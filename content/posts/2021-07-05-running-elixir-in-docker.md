@@ -1,7 +1,7 @@
 ---
-title: Elixir in a box
+title: Running Elixir in docker
 date: 2021-07-05
-description: "You don't need to install Elixir"
+description: "You don't need to install Elixir and all dependencies. You can use docker to make your life easier."
 image: images/posts/elixir-tutorial-elixir-in-a-box.png
 images:
   - images/posts/elixir-tutorial-elixir-in-a-box.png
@@ -9,7 +9,11 @@ tags:
   - Elixir
 ---
 
-![](https://media.giphy.com/media/6AFldi5xJQYIo/giphy.gif)
+{{< alert "secondary" >}}
+You don't need to install Elixir and all dependencies. You can use docker to make your life easier.
+{{< /alert >}}
+
+![containers](https://media.giphy.com/media/6AFldi5xJQYIo/giphy.gif)
 
 If you have `docker` and `docker-compose` you don't necessarily need to install Elixir from scratch. There's an easy way, you can let containers do the heavy lifting.
 
@@ -59,8 +63,10 @@ And just like that, you have a running `iex`.
 
 ![](https://media.giphy.com/media/3oriNYQX2lC6dfW2Ji/giphy.gif)
 
-Well, depending on your network to download the images and if you already have `docker` and `docker-compose` installed. But you get my point 😏
+Well, depending on your network to download the images and if you already have `docker` and `docker-compose` installed.
 
-And you are ready to go. For now I'll keep using Elixir locally on my Ubuntu, you can call me old school, but this is surely a great alternative.
+But you get my point 😏
+
+And you are ready to go. For now, I'll keep using Elixir locally on my Ubuntu, you can call me old school, but this is surely a great alternative.
 
 For reference: [Development environment for Elixir + Phoenix with Docker and Docker-compose](https://dev.to/hlappa/development-environment-for-elixir-phoenix-with-docker-and-docker-compose-2g17)

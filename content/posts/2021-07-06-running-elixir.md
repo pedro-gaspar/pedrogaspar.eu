@@ -1,13 +1,17 @@
 ---
 title: Running Elixir
 date: 2021-07-06
-description: "Different ways of running Elixir"
+description: "The different ways to execute elixir, from using elixir, or iex, running inside a mix project, using mix tasks and tests."
 image: images/posts/elixir-tutorial-running-elixir.png
 images:
   - images/posts/elixir-tutorial-running-elixir.png
 tags:
   - Elixir
 ---
+
+{{< alert "secondary" >}}
+The different ways to execute elixir, from using elixir, or iex, running inside a mix project, using mix tasks and tests.
+{{< /alert >}}
 
 ![](https://media.giphy.com/media/YM5eNbWmIYqll3Ar3m/giphy.gif)
 
@@ -51,7 +55,7 @@ iex(2)> c "hey_elixir.ex"
 Hello there, Elixir 🙂
 ```
 
-In this case, the file extension `.ex` means that this type of file is not a script, and it should be compiled. This is because scripts are compiled only they run, while these files are for longer-term usage, like a library or an application, so they should be compiled first.
+In this case, the file extension `.ex` means that this type of file is not a script, and it should be compiled. This is because scripts are compiled only when they run, while these files are for longer-term usage, like a library or an application, so they should be compiled first.
 You can also edit the file and recompile it from inside the shell.
 
 ```sh
@@ -63,22 +67,6 @@ Hello there, Elixir 👋
 In `iex` shell session, you can insert any Elixir expression.
 
 To exit from `iex`, you need to press `Ctrl+c` twice.
-
-## iex tip
-
-![](https://media.giphy.com/media/Rk8CZk8M7UHzG/giphy.gif)
-
-Sometimes, when you forget to close a quote, double quote, or brackets, it will continue to create new lines when you press enter.
-You can exit by pressing `Ctrl+c` twice, but you will leave the interactive shell. If you want to stop the statement, you are inserting
-add `#iex:break` it will error out, but you will still be in the shell.
-
-```sh
-iex(1)> IO.puts("dssdsda
-...(1)> asdasdsda
-...(1)> sadsadsda
-...(1)> #iex:break
-** (TokenMissingError) iex:1: incomplete expression
-```
 
 ## Defining and running modules in iex
 
@@ -114,7 +102,7 @@ iex(3)> open Hello
 Invalid arguments for open helper: "/home/pedro-gaspar/tmp/hello.ex"
 ```
 
-What is going on? Why isn't it working? Checking the documentation, it seems right. You need the EDITOR env var set to code, but I already have it.
+What is going on? Why isn't it working? Checking the documentation, it seems right. You need the EDITOR environment variable set to `code`, but I already have it.
 After searching a bit for it, I found https://github.com/elixir-lang/elixir/blob/master/lib/iex/test/iex/helpers_test.exs#L269
 
 So it doesn't work for in-memory modules, like the one we just did.
@@ -125,9 +113,9 @@ So it doesn't work for in-memory modules, like the one we just did.
 
 Time to add mix into the ... erm ... mix (couldn't avoid it)
 
-For persons who worked with Ruby on Rails, imagine a tool that mixes rails and rake. Mixing both, you get mix (today I'm on a roll).
+For persons who worked with Ruby on Rails, imagine a tool that mixes rails and rake. Mixing both, you get `mix` (today I'm on a roll).
 
-Mix is a tool that allows you to run commands, like generators, or tasks you or some module provides.
+`mix` is a tool that allows you to run commands, like generators, or tasks you or some module provides.
 
 Let's create a new project, or as we call them in Elixirland, **application**, and for that, we use mix.
 
@@ -144,7 +132,7 @@ mix new hello
 * creating test/hello_test.exs
 ```
 
-We've just run a command `mix command options`. In this case, the command is `new` and the options are the project's name.
+We've just run a command in the format `mix [command] [options]`. In this case, the command is `new` and the options are the project's name.
 
 You can then inspect the generated files:
 
@@ -198,7 +186,7 @@ defmodule Hello.MixProject do
 end
 ```
 
-This similar to the `Gemfile` for ruby or `package.json` for node.js. You define the application properties and dependencies in it.
+This is similar to the `Gemfile` for ruby or `package.json` for node.js. You define the application properties and dependencies in it.
 
 **lib/hello.ex**
 
@@ -227,8 +215,7 @@ This is a sample module for you to start adding some magic.
 
 ## Running with tests
 
-The remaining files are basically for documentation and tests which, end up being documentation. You add tests
-to list and document your app expected behavior.
+The remaining files are basically for documentation and tests which, end up being documentation. You add tests to document your app expected behavior.
 
 Speaking of tests, let's run them:
 
@@ -296,7 +283,7 @@ iex(1)> Hello.world()
 "Hello world!"
 ```
 
-Better right? It loaded our application, and now this vm instance knows what the `Hello` module is.
+Better right? It loaded our application, and now this virtual machine instance knows what the `Hello` module is.
 
 We could also run this from the command line like this:
 
@@ -389,10 +376,10 @@ defmodule HelloTest do
 end
 ```
 
-Our test file needs to end with a `__test` suffix and has `.exs` extension.
+Our test file needs to end with a `_test` suffix and have a `.exs` extension.
 It's a module and the first line `use ExUnit.Case` must be including support for those `test`. It's not `def` like the last time we defined a function.
 
-Ok, this is failing because it is testing the generated code. Let's fix it.
+Ok, this is failing because it was testing the generated code. Let's fix it.
 
 ```elixir
 defmodule HelloTest do
@@ -405,7 +392,7 @@ defmodule HelloTest do
 end
 ```
 
-After rerunning tests:
+After re-running tests:
 
 ```sh
 $ mix test
@@ -430,8 +417,11 @@ Finished in 0.02 seconds (0.00s async, 0.02s sync)
 Randomized with seed 977408
 ```
 
-Still failing? But we fixed it. But if we check the failing test is located in lib/hello.ex line 11 and not in the test file.
-Well if we check the file at that location, it's documentation. It looks like documentation but, if you check the second line of our test file, you see `doctest Hello`. Oh, we are also running tests that exist in the docs. Let's fix them as well:
+Still, failing? But we fixed it. 🤔
+
+But if we check the failing test is located in `lib/hello.ex` line 11 and not in the test file.
+
+Well if we check the file at that location, it's a documentation block. It looks like documentation but, if you check the second line of our test file, you see `doctest Hello`. Oh, we are also running tests that exist in the docs. Let's fix them as well:
 
 **lib/hello.ex**
 
@@ -457,7 +447,7 @@ defmodule Hello do
 end
 ```
 
-And if we rerun tests:
+And if we re-run tests:
 
 ```sh
 $ mix test
@@ -475,32 +465,6 @@ Randomized with seed 816150
 Green again.
 
 ![](https://media.giphy.com/media/ugOaZ3Wi8lqZW/giphy.gif)
-
-Inside iex, we can also check the documentation for our module and function:
-
-```sh
-$ iex -S mix
-Erlang/OTP 24 [erts-12.0.2] [source] [64-bit] [smp:12:12] [ds:12:12:10] [async-threads:1] [jit]
-
-Compiling 1 file (.ex)
-Interactive Elixir (1.12.1) - press Ctrl+C to exit (type h() ENTER for help)
-iex(1)> h Hello
-
-                      Hello
-
-Documentation for Hello.
-
-iex(2)> h Hello.world
-
-                   def world()
-
-Hello world.
-
-## Examples
-
-    iex> Hello.world()
-    "Hello world!"
-```
 
 ## Running with a mix task
 
@@ -537,79 +501,6 @@ $ mix hello
 Compiling 1 file (.ex)
 Greeting the world from elixir
 ```
-
-It wasn't listed when I was writing `mix help`, but that is because it needs to be compiled for it to appear.
-
-```sh
-mix help # no showing
-mix compile
-mix help
-mix                   # Runs the default task (current: "mix run")
-mix app.config        # Configures all registered apps
-mix app.start         # Starts all registered apps
-mix app.tree          # Prints the application tree
-mix archive           # Lists installed archives
-mix archive.build     # Archives this project into a .ez file
-mix archive.install   # Installs an archive locally
-mix archive.uninstall # Uninstalls archives
-mix clean             # Deletes generated application files
-mix cmd               # Executes the given command
-mix compile           # Compiles source files
-mix deps              # Lists dependencies and their status
-mix deps.clean        # Deletes the given dependencies' files
-mix deps.compile      # Compiles dependencies
-mix deps.get          # Gets all out of date dependencies
-mix deps.tree         # Prints the dependency tree
-mix deps.unlock       # Unlocks the given dependencies
-mix deps.update       # Updates the given dependencies
-mix do                # Executes the tasks separated by comma
-mix escript           # Lists installed escripts
-mix escript.build     # Builds an escript for the project
-mix escript.install   # Installs an escript locally
-mix escript.uninstall # Uninstalls escripts
-mix format            # Formats the given files/patterns
-mix hello             # Simply calls the Hello.world/0 function.
-mix help              # Prints help information for tasks
-mix hex               # Prints Hex help information
-mix hex.audit         # Shows retired Hex deps for the current project
-mix hex.build         # Builds a new package version locally
-mix hex.config        # Reads, updates or deletes local Hex config
-mix hex.docs          # Fetches or opens documentation of a package
-mix hex.info          # Prints Hex information
-mix hex.organization  # Manages Hex.pm organizations
-mix hex.outdated      # Shows outdated Hex deps for the current project
-mix hex.owner         # Manages Hex package ownership
-mix hex.package       # Fetches or diffs packages
-mix hex.publish       # Publishes a new package version
-mix hex.registry      # Manages local Hex registries
-mix hex.repo          # Manages Hex repositories
-mix hex.retire        # Retires a package version
-mix hex.search        # Searches for package names
-mix hex.sponsor       # Show Hex packages accepting sponsorships
-mix hex.user          # Manages your Hex user account
-mix loadconfig        # Loads and persists the given configuration
-mix local             # Lists local tasks
-mix local.hex         # Installs Hex locally
-mix local.phx         # Updates the Phoenix project generator locally
-mix local.public_keys # Manages public keys
-mix local.rebar       # Installs Rebar locally
-mix new               # Creates a new Elixir project
-mix phx.new           # Creates a new Phoenix v1.5.9 application
-mix phx.new.ecto      # Creates a new Ecto project within an umbrella project
-mix phx.new.web       # Creates a new Phoenix web project within an umbrella project
-mix profile.cprof     # Profiles the given file or expression with cprof
-mix profile.eprof     # Profiles the given file or expression with eprof
-mix profile.fprof     # Profiles the given file or expression with fprof
-mix release           # Assembles a self-contained release
-mix release.init      # Generates sample files for releases
-mix run               # Starts and runs the current application
-mix test              # Runs a project's tests
-mix test.coverage     # Build report from exported test coverage
-mix xref              # Prints cross reference information
-iex -S mix            # Starts IEx and runs the default task
-```
-
-There it is 🥳
 
 ![](https://media.giphy.com/media/3o7ZeEZUzRjyvWuuIg/giphy.gif)
 

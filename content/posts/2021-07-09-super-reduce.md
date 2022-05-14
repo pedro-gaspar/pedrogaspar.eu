@@ -1,13 +1,17 @@
 ---
 title: Super reduce
 date: 2021-07-09
-description: "A function that gives you superpowers."
+description: "An important function in your tool belt that allows you to build pretty much anything. Let's implement some of `Enum` functions with reduce."
 image: images/posts/super-reduce.png
 images:
   - images/posts/super-reduce.png
 tags:
   - Elixir
 ---
+
+{{< alert "secondary" >}}
+An important function in your tools belt that allows you to build pretty much anything. Let's implement some of `Enum` functions with reduce.
+{{< /alert >}}
 
 ![](https://media.giphy.com/media/xT9DPErFASWkKCaAJW/giphy.gif)
 
@@ -35,7 +39,7 @@ iex(1)> HumbleEnum.double([1,2,3])
 
 Cool right.
 
-Now lets do one to triple each value of a list:
+Now let's do one to triple each value of a list:
 
 ```elixir
 defmodule HumbleEnum do
@@ -49,7 +53,7 @@ iex(2)> HumbleEnum.triple([1,2,3])
 
 Best lines of code, ever ever seen. 😏
 
-Now let's do a function to check if a each value of a list is even:
+Now let's do a function to check if each value of a list is even:
 
 ```elixir
 defmodule HumbleEnum do
@@ -164,9 +168,9 @@ iex(1)> HumbleEnum.reduce([1, 2, 3], 0, fn n, acc -> n + acc end)
 6
 ```
 
-**reduce** is so powerful that we can basically build all functions of **Enum** using it.
+**reduce** is so powerful that we can build all functions of **Enum** using it.
 
-## map _reduce_ version
+## map implemented with _reduce_
 
 ```elixir
 defmodule HumbleEnum do
@@ -190,7 +194,7 @@ We need to reverse the order of the resulting list, so we need **reverse**, but 
 
 ![](https://media.giphy.com/media/11t0FcPMn6mjL2/giphy.gif)
 
-## reverse _reduce_ version
+## reverse implemented with _reduce_
 
 ```elixir
 defmodule HumbleEnum do
@@ -208,7 +212,7 @@ iex(1)> HumbleEnum.reverse([1, 2, 3])
 
 Now let's fix **map**.
 
-## map _reduce_ version v2
+## map implemented with _reduce_ v2
 
 ```elixir
 defmodule HumbleEnum do
@@ -231,7 +235,7 @@ We will come back to this later. 🤞
 
 ![](https://media.giphy.com/media/pPqxV1MVzfqes/giphy.gif)
 
-## count _reduce_ version
+## count implemented with _reduce_
 
 ```elixir
 defmodule HumbleEnum do
@@ -248,7 +252,7 @@ Cool, we have all the functions we built previously implemented with reduce.
 
 ## reduce can have an order
 
-In Exercism, the mentor pointed out that reversing the end result is fine, but **reduce** can have an order. 🙏
+In Exercism, the mentor pointed out that reversing the result is fine, but **reduce** can have an order. 🙏
 
 We are doing the left to right version:
 

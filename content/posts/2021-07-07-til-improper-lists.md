@@ -1,7 +1,7 @@
 ---
 title: Quacks like a list, but it's not a list
 date: 2021-07-07
-description: "This will happen someday"
+description: "If you are not careful when building lists, you can end up with an improper list."
 image: images/posts/til-improper-lists.png
 images:
   - images/posts/til-improper-lists.png
@@ -9,6 +9,10 @@ tags:
   - Elixir
   - Today I Learned
 ---
+
+{{< alert "secondary" >}}
+If you are not careful when building lists, you can end up with an improper list.
+{{< /alert >}}
 
 ![](https://media.giphy.com/media/12rqBPpSz9jIA0/giphy.gif)
 

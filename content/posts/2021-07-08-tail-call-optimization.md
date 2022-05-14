@@ -1,7 +1,7 @@
 ---
 title: Should I always use tail recursion?
 date: 2021-07-08
-description: "The short answer is the dreaded ... it depends."
+description: "The short answer if we should always use tail recursion is the dreaded, **it depends**."
 image: images/posts/tail-call-optimization.png
 images:
   - images/posts/tail-call-optimization.png
@@ -9,7 +9,11 @@ tags:
   - Elixir
 ---
 
-While trying to implement my own version of `map` for an Exercism exercise, I've come across a doubt that should trouble the Elixir newbie.
+{{< alert "secondary" >}}
+The short answer if we should always use tail recursion is the dreaded ... it depends.
+{{< /alert >}}
+
+While trying to implement my version of `map` for an Exercism exercise, I've come across a doubt that should trouble the Elixir newbie.
 
 ![](https://media.giphy.com/media/YcFOfbeTcHtVS/giphy.gif)
 
@@ -17,9 +21,9 @@ Whenever we have recursive functions, if calling the function it's not the last 
 
 ## Tail call recursion
 
-A special form of recursion where the last operation of a function is a recursive call. The recursion may be optimized by executing the call in the current stack frame and returning its result rather than creating a new stack frame.
+A special form of recursion where the last operation of a function is a recursive call. The recursion is optimized by executing the call in the current stack frame and returning its result rather than creating a new stack frame.
 
-So if the last thing we call is the recursive function, that doesn't result as a new entry in the stack. Instead, the calling function will simply return the value it gets.
+So if the last thing we call is the recursive function, that doesn't result in a new entry in the stack. Instead, the calling function will simply return the value it gets.
 
 > So ... should I always use tail call recursion?
 
@@ -86,8 +90,8 @@ Now let's do the same map function but with tail call optimization.
 We need to write a function with an accumulator argument that stores the final mapped list for this to work.
 
 ```elixir
-BenchmarkRecursion do
-def map([], _fun), do: []
+defmodule BenchmarkRecursion do
+  def map([], _fun), do: []
 
   def map_tail_call(list, fun), do: do_map_tail_call(list, fun, [])
 
@@ -198,8 +202,8 @@ Well, they almost feel to be taking the same time.
 
 ![](https://media.giphy.com/media/3jN3GziOKUEmI/giphy.gif)
 
-Instead of gut feeling or going with the one that seems right after timing a couple of times, let's do it right.
-We should put on our race judge hat and clock and let's make a race, or in fact, a lot of them.
+Instead of gut feeling or going with the one that seems right after measuring a couple of times, let's do it right.
+We should put on our race judge hat and clock and do a race, or in fact, a lot of them.
 
 ## Benchmark FTW
 
@@ -543,7 +547,7 @@ map                    1.58 - 1.24x slower +122.09 ms
 ...
 ```
 
-Only with huge lists we actually see advantages in using tail call optimization.
+Only with huge lists do we see advantages in using tail call optimization.
 
 ![](https://media.giphy.com/media/l3q2DgSFjbAyseViM/giphy.gif)
 
@@ -559,9 +563,9 @@ In the other cases, well, no.
 
 If you check the implementations, the first version is a lot more readable than the second. So first, strive for readability and, only if required, reduce readability for the sake of speed.
 
-But only if it's really needed.
+But only if it's needed.
 
-This is actually one of the [miths of erlang](http://erlang.org/doc/efficiency_guide/myths.html).
+This is one of the [miths of erlang](http://erlang.org/doc/efficiency_guide/myths.html).
 
 At the end of the day, it's a decision that should be based on the usage of the system you are building.
 

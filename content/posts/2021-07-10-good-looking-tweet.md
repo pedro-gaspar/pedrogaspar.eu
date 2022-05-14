@@ -10,11 +10,15 @@ tags:
   - Twitter
 ---
 
+{{< alert "secondary" >}}
+Make your blog posts look better on Twitter.
+{{< /alert >}}
+
 When I was posting these blog post URLs in my Twitter feed, they seemed a bit wishy-washy.
 
 {{< tweet 1415067244900532227 >}}
 
-You see other good-looking tweets, and yours looks like something done without giving a shit. 💩
+You see other good-looking tweets, and yours looks like something done without giving a shit 💩.
 
 So let's make them look better.
 

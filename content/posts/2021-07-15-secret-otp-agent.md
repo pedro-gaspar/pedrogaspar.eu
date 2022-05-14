@@ -10,6 +10,9 @@ tags:
   - OTP
 ---
 
+{{< alert "secondary" >}}
+{{< /alert >}}
+
 ![](https://media.giphy.com/media/3oz8xILeZl6jt78kXm/giphy.gif)
 
 Elixir has a secret agency called OTP, with plenty of operatives in its ranks. One of the foot soldiers is the [Agent](https://hexdocs.pm/elixir/1.12/Agent.html).

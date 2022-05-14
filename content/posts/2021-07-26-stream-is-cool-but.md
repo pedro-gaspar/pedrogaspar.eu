@@ -9,6 +9,9 @@ tags:
   - Elixir
 ---
 
+{{< alert "secondary" >}}
+{{< /alert >}}
+
 ![](https://media.giphy.com/media/xT5LMFVIKfCsH0rkoo/giphy.gif)
 
 When you come to Elixir with big object-oriented baggage, you try to map some of your solutions to what you previously did. Let's try to build a list on even numbers, for instance using **javascript**:
