@@ -1,7 +1,7 @@
 ---
-title: "Draft: How to safely break in iex"
+title: "How to safely break in iex"
 date: 2022-05-14
-description: "Break in iex with unmatched quotes or parens without exiting"
+description: "Break in iex, with unmatched quotes or parens, without exiting"
 image: images/posts/iex_break.png
 images:
   - images/posts/iex_break.png
@@ -11,7 +11,7 @@ tags:
 ---
 
 {{< alert "secondary" >}}
-Break in iex with unmatched quotes or parens without exiting
+Break in iex, with unmatched quotes or parens, without exiting
 {{< /alert >}}
 
 ![](https://media.giphy.com/media/Rk8CZk8M7UHzG/giphy.gif)
@@ -20,7 +20,7 @@ Sometimes, when you forget to close a quote, double quote, or brackets, it will 
 
 You can exit by pressing `Ctrl+c` twice, but you will leave the interactive shell.
 
-If you want to stop the statement, you are inserting just add `#iex:break`. It will error out, but you will still be in the shell.
+If you want to stop the statement, you are inserting, just add `#iex:break`. It will error out, but you will still be in the shell.
 
 ```sh
 iex(1)> IO.puts("dssdsda
