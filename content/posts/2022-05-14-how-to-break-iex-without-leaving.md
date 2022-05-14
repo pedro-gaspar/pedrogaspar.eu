@@ -1,7 +1,7 @@
 ---
 title: "How to safely break in iex"
 date: 2022-05-14
-description: "Break in iex, with unmatched quotes or parens, without exiting"
+description: "Break in iex, with unmatched quotes or parentheses, without exiting"
 image: images/posts/iex_break.png
 images:
   - images/posts/iex_break.png
@@ -11,7 +11,7 @@ tags:
 ---
 
 {{< alert "secondary" >}}
-Break in iex, with unmatched quotes or parens, without exiting
+Break in iex, with unmatched quotes or parentheses, without exiting
 {{< /alert >}}
 
 ![](https://media.giphy.com/media/Rk8CZk8M7UHzG/giphy.gif)
