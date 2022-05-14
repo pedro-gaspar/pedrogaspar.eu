@@ -1,7 +1,7 @@
 ---
 title: Secret OTP Agent
 date: 2021-07-15
-description: "Let's learn OTP Agent by building our own version."
+description: "Let's learn OTP Agent by building our version using Elixir primitives."
 image: images/posts/secret-agent.png
 images:
   - images/posts/secret-agent.png
@@ -11,13 +11,14 @@ tags:
 ---
 
 {{< alert "secondary" >}}
+Let's learn OTP Agent by building our version using Elixir primitives
 {{< /alert >}}
 
 ![](https://media.giphy.com/media/3oz8xILeZl6jt78kXm/giphy.gif)
 
 Elixir has a secret agency called OTP, with plenty of operatives in its ranks. One of the foot soldiers is the [Agent](https://hexdocs.pm/elixir/1.12/Agent.html).
 
-Whenever you need to share state among different processes or by the same process at other points in time, you can use Agent. It allows you to have a separate process that keeps your state and allows you to change it and retrieve it in a concurrently safe way.
+Whenever you need to share state among different processes or by the same process at other points in time, you can use `Agent`. It allows you to have a separate process that keeps your state and allows you to change it and retrieve it in a concurrently safe way.
 
 Let's first start by testing how OTP Agent works:
 
@@ -48,7 +49,7 @@ Anonymous functions are used to build, get and update state:
 {:ok, pid} = Agent.start_link(fn -> [] end)
 ```
 
-## Get the current version of state
+## Get the current version of the state
 
 ```elixir
 Agent.get(pid, fn digits -> digits end)
@@ -62,7 +63,7 @@ Agent.update(pid, fn digits -> digits ++ ["4"] end)
 
 ![](https://media.giphy.com/media/1gRtl9mdLQvvvOfR9u/giphy.gif)
 
-Let's build our own secret agency, OoohTP, and reverse engineer Agent to build our own **SecretAgent**. We will use the basic functions to handle processes in Elixir, namely **spawn_link**, **send**, and **receive**.
+Let's build our secret agency, OoohTP, and reverse engineer Agent to build our own **SecretAgent**. We will use the basic functions to handle processes in Elixir, namely **spawn_link**, **send**, and **receive**.
 
 First, we need to create the SecretAgent
 
@@ -90,7 +91,7 @@ iex(2)> self()
 #PID<0.173.0>
 ```
 
-We have a new process id for our own SecretAgent.
+We have a new process id for our SecretAgent.
 
 But wait 😱, that process died just after it executed the anonymous function.
 
@@ -125,7 +126,7 @@ iex(2)> Process.alive?(pid)
 true
 ```
 
-It's alive and kicking. Notice that even though we have infinite recursion there, it doesn't blow up. That is because of tail call optimization. Elixir is smart enough to notice that the last call of the function is calling itself and doesn't add a new entry to the stack call.
+It's alive and kicking. Notice that even though we have infinite recursion there, it doesn't blow up. That is because of **tail call optimization**. Elixir is smart enough to notice that the last call of the function is calling itself and doesn't add a new entry to the stack call.
 
 ![](https://media.giphy.com/media/NShlefwRfXmMg/giphy.gif)
 

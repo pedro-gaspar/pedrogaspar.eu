@@ -22,7 +22,7 @@ While doing some Exercism exercises, sometimes I had to stop doing a pipeline to
 
 In the end, it made me feel sad because the flow of the pipeline had to be interrupted, just because...
 
-Let's see an example, we want the result of a function to be a sum of filtered version of persons that like starwars:
+Let's see an example, we want the result of a function to be a sum of a filtered version of persons that like Starwars:
 
 ```elixir
 defmodule Starwars do
@@ -75,7 +75,7 @@ iex(2)> Starwars.fans(persons)
 {:ok, 2, 4}
 ```
 
-Meeh, I just wanted to check the `likes_yoda value, but I'm getting everything...
+Meeh, I just wanted to check the `likes_yoda` value, but I'm getting everything...
 
 ![](https://media.giphy.com/media/WkOAurEV1T42tCq5VF/giphy.gif)
 
@@ -92,7 +92,7 @@ defmodule Starwars do
       |> Enum.filter(& &1.likes_yoda)
       |> Enum.count()
       |> case do
-        result -> {:ok, fans_count, Enum.count(persons)}
+        fans_count -> {:ok, fans_count, Enum.count(persons)}
       end
   end
 end
@@ -131,11 +131,11 @@ defmodule Starwars do
 end
 ```
 
-This looks a bit better; you are doing an anonymous function to do the transformation, that sounds ok.
+This looks a bit better; you are doing an anonymous function to do the transformation, and that sounds ok.
 
 But this kind of reminded me of `(function($) { })(jQuery);`. The weird links I have in my head. 😜
 
-But well, it was the best way, the old way.
+It was the best way, the old way.
 
 Now for improving the debugging.
 
@@ -188,7 +188,7 @@ end
 
 Pretty neat, right? ♥
 
-**`tap`** is useful for side effects during the pipeline where you want to do your side effect but return the exact same value if received as an argument:
+**`tap`** is useful for side effects during the pipeline where you want to do your side effect but return the same value if received as an argument:
 
 ```elixir
 tap(20, fn _argument -> 0 end) == 20

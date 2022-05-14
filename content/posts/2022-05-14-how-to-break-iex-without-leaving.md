@@ -2,9 +2,9 @@
 title: "Draft: How to safely break in iex"
 date: 2022-05-14
 description: "Break in iex with unmatched quotes or parens without exiting"
-image: images/posts/elixir-streams.png
+image: images/posts/iex_break.png
 images:
-  - images/posts/elixir-streams.png
+  - images/posts/iex_break.png
 tags:
   - Elixir
   - Today I Learned

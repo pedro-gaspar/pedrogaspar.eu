@@ -10,9 +10,8 @@ tags:
 ---
 
 {{< alert "secondary" >}}
-{{< /alert >}}
-
 Coming from an object-oriented background, you will fall into some Elixir booby traps.
+{{< /alert >}}
 
 I'll highlight some common ones where, I spent a few minutes looking at the screen, looking like this:
 
@@ -22,7 +21,7 @@ It is pretty helpful to get familiar with error messages because you will see th
 
 ## Single quotes aren't strings
 
-In many languages you are used to use both double and single quotes. They both represent a string.
+In many languages, you are used to using both double and single quotes. They both represent a string.
 So you will probably do something like:
 
 ```elixir
@@ -78,7 +77,7 @@ iex(1)> ?1
 49 # codepoint for char 1
 ```
 
-A string on the other and is a **binary**. We are not used to this term related to string, coming from other languages. Since Elixir uses the Erlang VM, you don't have strings as you are used. Only binary representations of strings.
+A string on the other end is a **binary**. We are not used to this term related to string, coming from other languages. Since Elixir uses the Erlang VM, you don't have strings as you are used. Only binary representations of strings.
 
 ```elixir
 iex(1)> "123"
@@ -86,7 +85,7 @@ iex(1)> "123"
 iex(2)> is_binary("123")
 ```
 
-The best thing to do is always use double quotes and only resort to single quotes if you really need them.
+The best thing to do is always use double quotes and only resort to single quotes if you need them.
 
 # Lists with small integers
 
@@ -101,7 +100,7 @@ iex(41)> [10, 112]
 
 ![](https://media.giphy.com/media/2XskdWuNUyqElkKe4bm/giphy.gif)
 
-In **mix**, Elixir tries to infer the type. And if it quacks like a char list, it will show a char list. If the integer is bigger than the possible codepoints, you won't see it as a char list because there is no associated code points.
+In **mix**, Elixir tries to infer the type. And if it quacks like a char list, it will show a char list. If the integer is bigger than the possible codepoints, you won't see it as a char list because there are no associated code points.
 
 ```elixir
 iex(42)> [100000]
@@ -195,7 +194,7 @@ case y do
 end
 ```
 
-Exactly the same behavior as when you are on the left side of the **`=`**
+The same behavior as when you are on the left side of the **`=`**
 
 ```elixir
 iex(25)> x = "1"
@@ -259,7 +258,7 @@ iex(2)> x.show_me
 987
 ```
 
-You only do this for keys that already exist in the map, otherwise:
+You only do this for keys that already exist on the map, otherwise:
 
 ```elixir
 iex(1)> x.something
@@ -302,7 +301,7 @@ iex(4)> for i <- 1..3 do
 warning: variable "i" is unused (if the variable is not meant to be used, prefix it with an underscore)
   iex:4
 
-warning: variable "map" is unused (there is a variable with the same name in the context, use the pin operator (^) to match on it or prefix this variable with underscore if it is not meant to be used)
+warning: variable "map" is unused (there is a variable with the same name in the context, use the pin operator (^) to match it or prefix this variable with an underscore if it is not meant to be used)
   iex:5
 
 [%{x: 1}, %{x: 1}, %{x: 1}]
@@ -321,7 +320,7 @@ warning: variable "map" is unused (there is a variable with the same name in the
 
 You expect the map to have changed, right? Think again.
 
-It's lexical scoped inside the **do**, so its value doesn't change.
+It's lexically scoped inside the **do**, so its value doesn't change.
 
 Whenever you want loops to store state, you will need to resource to **Enum.reduce** or **recursion**.
 
@@ -371,7 +370,7 @@ iex(15)> looks_like_a_python_dict["y"] = 1
 
 ![](https://media.giphy.com/media/t6WvtUluR8V2NSxLlk/giphy.gif)
 
-This is not an array and not and object.
+This is not an array and not an object.
 
 But there's the right way to do this in Elixir:
 
@@ -431,7 +430,7 @@ iex(3)> x_marks_the_spot |> String.at(1)
 
 ## lists are not arrays
 
-When you ear lists, coming from other languages you will think of arrays. So you will probably try something like:
+When you hear lists, coming from other languages you will think of arrays. So you will probably try something like:
 
 ```elixir
 iex(5)> game_scores = [500, 333, 456, 665, 943]

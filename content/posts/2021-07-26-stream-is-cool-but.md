@@ -1,7 +1,7 @@
 ---
 title: Stream is cool, but...
 date: 2021-07-26
-description: "Use it wisely. For some use cases, it is a lot worse."
+description: "Use `Stream` wisely. For some use cases when you have large lists it can be great, but other times it is not the best choice."
 image: images/posts/elixir-streams.png
 images:
   - images/posts/elixir-streams.png
@@ -10,11 +10,12 @@ tags:
 ---
 
 {{< alert "secondary" >}}
+Use `Stream` wisely. For some use cases when you have large lists it can be great, but other times it is not the best choice.
 {{< /alert >}}
 
 ![](https://media.giphy.com/media/xT5LMFVIKfCsH0rkoo/giphy.gif)
 
-When you come to Elixir with big object-oriented baggage, you try to map some of your solutions to what you previously did. Let's try to build a list on even numbers, for instance using **javascript**:
+When you come to Elixir with big object-oriented baggage, you try to map some of your solutions to what you previously used. Let's try to build a list on even numbers, for instance using **javascript**:
 
 ```javascript
 let even = [];
@@ -36,23 +37,30 @@ Wait, we have that shinny [Stream](https://hexdocs.pm/elixir/1.12/Stream.html) t
 Stream is very cool. Due to their laziness, streams are helpful when working with large (or even infinite) lists.
 
 ```elixir
-some_big_list |> Stream.map(...) |> Stream.map(...) |> Enum.sum()
+some_big_list
+|> Stream.map(...)
+|> Stream.map(...)
+|> Enum.sum()
 ```
 
-For pipelines where you do lots of transformations it will for sure be helpful. Let's use it here.
+For pipelines where you do lots of transformations, it will for sure be helpful. Let's use it here.
 
 ```elixir
-Stream.iterate(0, &(&1 + 2)) |> Stream.take_while(&(&1 <= 2000)) |> Enum.to_list()
+Stream.iterate(0, &(&1 + 2))
+|> Stream.take_while(&(&1 <= 2000))
+|> Enum.to_list()
 ```
 
 ![](https://media.giphy.com/media/NaboQwhxK3gMU/giphy.gif)
 
-Easy peasy, lemmon squeezy. Now let's try it with a really big list:
+Easy peasy, lemon squeezy. Now let's try it with a really big list:
 
 > But at what cost?
 
 ```elixir
-Stream.iterate(0, &(&1 + 2)) |> Stream.take_while(&(&1 <= 2000000)) |> Enum.to_list()
+Stream.iterate(0, &(&1 + 2))
+|> Stream.take_while(&(&1 <= 2000000))
+|> Enum.to_list()
 ```
 
 Weird, it seemed a bit slow. So let's make it even more significant.
@@ -60,7 +68,9 @@ Weird, it seemed a bit slow. So let's make it even more significant.
 ![](https://media.giphy.com/media/vMbC8xqhIf9ny/giphy.gif)
 
 ```elixir
-Stream.iterate(0, &(&1 + 2)) |> Stream.take_while(&(&1 <= 20000000)) |> Enum.to_list()
+Stream.iterate(0, &(&1 + 2))
+|> Stream.take_while(&(&1 <= 20000000))
+|> Enum.to_list()
 ```
 
 For our use case, it looks slow, really slow. How slow, you might ask. So instead of following gut feelings, let's benchmark it.
@@ -71,7 +81,7 @@ $ mix new big_list
 
 Let's add [Benchee](https://github.com/bencheeorg/benchee) to `mix.exs`. And then build the even list in different ways to get a comparison of speed.
 
-First let's use our comprehension:
+First, let's use our comprehension:
 
 ```elixir
 def using_comprehension(number), do: for(n <- 0..number, rem(n, 2) == 0, do: n)
@@ -155,7 +165,7 @@ using_stream              153.70 K - 13.03x slower +6.01 μs
 
 ![](https://media.giphy.com/media/xThta2S6BM1yIzVHqw/giphy.gif)
 
-Our recursion function is by far the fastest, and followed by its tail optimization version 😏. The range version is pretty quick and a big surprise. The comprehension is faster than the enum version. Since they kind of do the same, I expected them to be similar, but it's quite a difference. And then down the bottom our slow stream 😿.
+Our recursion function is by far the fastest, followed by its tail optimization version 😏. The range version is pretty quick and a big surprise. The comprehension is faster than the enum version. Since they kind of do the same, I expected them to be similar, but it's quite a difference. And then down at the bottom, our slow stream 😿.
 
 Let's try with a bigger list to see if it changes our benchmark.
 
@@ -187,7 +197,7 @@ using_enum                    17.42 - 3.79x slower +42.27 ms
 using_stream                  9.97 - 6.62x slower +85.11 ms
 ```
 
-Tail recursion optimization starts to really optimize 😏. And all other versions are not as bad compared to the previous one.
+Tail recursion optimization starts to optimize 😏. And all other versions are not as bad compared to the previous one.
 Stream seems to be slow as hell compared to all other versions, regardless of the list size.
 
 Now let's change the use case. We will sum all the even numbers that have the lucky number 7 on them.
@@ -253,12 +263,12 @@ using_range                    2.90 - 2.24x slower +191.28 ms
 
 ![](https://media.giphy.com/media/l4q7VhGsL6BnXJrc4/giphy.gif)
 
-Stream starts to really shine. Not being eager and processing results, one at a time, makes a huge difference with large lists and more complicated pipelines.
+Stream starts to shine. Not being eager and processing results, one at a time, makes a huge difference with large lists and more complicated pipelines.
 
-When I started doing this little investigation, I wasn't expecting some findings. First, Enum with filter is a lot slower than a comprehension with a filter. I was expecting it to be very similar. Need to find out why.
+When I started doing this little investigation, I wasn't expecting some findings. First, `Enum` with filter is a lot slower than a comprehension with a filter. I was expecting it to be very similar. Need to find out why.
 
 Streams are better suited for larger pipelines and aren't the best tool for many use cases.
-Like everything in engineering, it's a matter of choosing the most cost-effective, fastest and elegant solution.
+Like everything in engineering, it's a matter of choosing the most cost-effective, fastest, and elegant solution.
 
 And at the end... You need to choose wisely.
 
