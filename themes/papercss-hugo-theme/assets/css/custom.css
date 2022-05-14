@@ -112,6 +112,7 @@ main img {
 
 .post-details {
   display: flexbox;
+  margin-bottom: 0.5rem;
 }
 
 h1.post {
